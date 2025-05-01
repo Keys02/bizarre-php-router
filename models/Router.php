@@ -7,6 +7,7 @@
             $this->routes[$path] = $handler;
         }
 
+        //Matching routes to a specific URL, termed as dispatching.
         public function dispatch($path) : void 
         {
             foreach($this->routes as $route => $handler) {

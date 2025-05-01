@@ -1,7 +1,7 @@
 <?php
     require_once "models/Router.php";
     $router = new Router();
-    $path =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $path =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //Remove query string from the route
 
     $router->route("/bizzare-router/", function() {
         echo "Homepage";
@@ -27,5 +27,6 @@
         require "controllers/team.php";
     });
     
+
     $router->dispatch($path);
 ?>
