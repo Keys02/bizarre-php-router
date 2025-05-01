@@ -3,28 +3,28 @@
     $router = new Router();
     $path =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //Remove query string from the route
 
-    $router->route("/bizzare-router/", function() {
-        echo "Homepage";
+    $router->route("/", function() {
+        include "controllers/index.php";
     });
 
-    $router->route("/bizzare-router/about", function() {
-        require "controllers/about.php";
+    $router->route("/about", function() {
+        include "controllers/about.php";
     });
     
-    $router->route("/bizzare-router/contact", function() {
-        require "controllers/contact.php";
+    $router->route("/contact", function() {
+        include "controllers/contact.php";
     });
     
-    $router->route("/bizzare-router/product/{id}", function($id){
-        require "controllers/product.php";
+    $router->route("/product/{id}", function($id){
+        include "controllers/product.php";
     });
 
-    $router->route("/bizzare-router/product/{id}/order/{order_id}", function($id, $order_id) {
-       require "controllers/order.php";
+    $router->route("/product/{id}/order/{order_id}", function($id, $order_id) {
+       include "controllers/order.php";
     });
 
-    $router->route("/bizzare-router/team", function() {
-        require "controllers/team.php";
+    $router->route("/team", function() {
+        include "controllers/team.php";
     });
     
 
