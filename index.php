@@ -1,5 +1,5 @@
 <?php
-    require_once "Router.php";
+    require_once "models/model.php";
     $router = new Router();
     $path =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
